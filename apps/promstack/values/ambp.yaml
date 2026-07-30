@@ -56,7 +56,7 @@ kube-prometheus-stack:
           encryptedData:
             admin-password: AgBJebrARV+u/8et5tz0CbmFuBUdo4ZHO3bxO4nGGGfJT5c/rEpvH/WVvGqsDIlyoW37iAUv6k6dh/3STm6PcgNg1mhui6R6d1Of4dE/q/RmWll/ojBpKkZ3QINo1uPAZY7A89qCKqj2zpjwsfqFZW8FEnEwuuJOPRRn+VXohCtzyMbH5xEUUdmwRk/bOom93nb4KMSYCfo5WA4ZJka6VBcNPKzSRByMAk8gZbbE6M8g4ie11iEN4KVgQOBs78RepsWSR/1oFJ9TvWT9Hzo9P3F3or+xkYW/1uUUQbZAOaIT4U587/XUtd+B6RCP0L+V1inCldDRfEadHKp07t0uPMA4liWU0QYMUi1PcrR33Dg6xY1FH34BlNr6YWANm6UdZYC+NBOWO00KyX0L32DARUvZy5z8ied8oBK/+80muSIOgXduvDiY0eiAJIGxNFzhdIGCbsX2kFDmGX6vNPANbV5zLcQlnAfvCTteNVs+XbDnkpr26ufAyHXD3+kWf61aEbgHaQPcla0k2vEDgeKL3QyC25dnkYe5x4DYLCvtrR3vx1RYGC7ho+Po7x8mhUPe2gy6q/t3em9Z1txlaLa1zhKp0OpMjf0rt4Awn2GvIbUgxUdVM14nZjbWSLQcmBRL87S4IDF4LOFOxKHG79nSitnZeW0X/v+6HVfsYDnghJixGmLicjFK4UC8lYgsJhlypwrBbx7AodY8iTVoGPc2o3Lx8CHOd9M/R+2nTflWK37FRg==
             admin-user: AgAQSyn9fvr/qk7NxbGkXcOQSiDz8axqLKEBUNKIy1exkOxvio6ZVl5jaicTEnDjx4X2Ddtlff202wZXWTesQcfsOmcpAqm6ejfsYCJzYO6IL5ATRKo3BuU2BwbMvBMMX7haSKhepDxJ2CuIa2poS9EjGHDHx2DYgO1V/lEOekuY5EpFHVgbxOlUIhvwDPsVSWeqC9qqfeyldHFiqznIZrHDIWx6iRqSb/wsY9jp0rPQmMrJzoMzHjbUYE/W9PZaq8ho/04S1GZPLJhaUPwcfS8d5qDycbSz3ew1uKz4Ca7mUo+1JMV9vpe9rgwmRq9agawF5AuxLFEoqiE4rhZGT4BeKdAUVTBcQnp1FebUOZ17MXzTOS0tiNt3r69cEsiHXUaVzfHI0yknZsFS2XxxDK/2EbJ3iDKYpj6wBXxBCnf0ZbtjeGd9xH7sa+Vc4fG93zrfH9XquJAENGwUdNeFgvF6LZ0p7APp9jbOAbuB14FdHJxV/+bcVqYnhPJPbqe2+cvpvBVCrGRxgigeGjRf/2U+yXRjCeSO0wMKJ4DekFCp7xo9Kxk0JMoLQ04Q5Dm7rLc7ftg8iACqq8SdFNMte4QsHxdvlcGuIibpyPeePUhVS1UoYlsPX/Z3KcVX/fQQK7woYW+uEsfiGVzgTZh1bgVx4LmQhGeCAXW4ipk7lau0Py/Cb6d2L8b/7KZxMGKM9PVbeXCzUg==
-        template:
-          metadata:
-            name: grafana-auth
-            namespace: monitoring
+          template:
+            metadata:
+              name: grafana-auth
+              namespace: monitoring
