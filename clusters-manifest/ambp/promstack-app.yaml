@@ -22,3 +22,13 @@ spec:
     syncOptions:
       - CreateNamespace=true
       - ServerSideApply=true
+  # Application-level ServerSideApply=true (needed for the huge prometheus-operator
+  # CRDs) also switches ArgoCD's diff engine to structured/server-side diffing, which
+  # errors on the sealed-secrets CRD's loosely-typed spec.template field even though
+  # the resource itself applies fine (per-resource ServerSideApply=false override on
+  # the resource only affects apply, not comparison). Exclude the field from diffing.
+  ignoreDifferences:
+    - group: bitnami.com
+      kind: SealedSecret
+      jsonPointers:
+        - /spec/template
