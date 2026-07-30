@@ -1,0 +1,9 @@
+apiVersion: v2
+name: promstack
+description: Umbrella chart wrapping kube-prometheus-stack for the fleet
+type: application
+version: 0.1.0
+dependencies:
+  - name: kube-prometheus-stack
+    version: "87.21.0"
+    repository: "https://prometheus-community.github.io/helm-charts"
