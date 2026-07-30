@@ -1,0 +1,9 @@
+apiVersion: v2
+name: postgres
+description: Umbrella chart wrapping the CloudPirates postgres chart for the fleet
+type: application
+version: 0.1.0
+dependencies:
+  - name: postgres
+    version: "0.19.12"
+    repository: "oci://registry-1.docker.io/cloudpirates"
