@@ -9,3 +9,20 @@ postgres:
     limits:
       cpu: 500m
       memory: 512Mi
+  auth:
+    existingSecret: postgres-auth
+  # Sealed by kubeseal against ambp's sealed-secrets controller — ciphertext only,
+  # decrypts to a `postgres-auth` Secret with key `postgres-password`.
+  extraObjects:
+    - apiVersion: bitnami.com/v1alpha1
+      kind: SealedSecret
+      metadata:
+        name: postgres-auth
+        namespace: postgres
+      spec:
+        encryptedData:
+          postgres-password: AgAlU8gJFv4QkvEfeO1wcx5wqkxNoRZCchbb6MGdCwWjaNLcFnXr03uXeeM4aN4mQ2UFV4ph0zp+xFY8LarkSBzS14+kdgHCpIa23SbWg8StDfHHlTEbOO5RTRR2dNlnCaxIqGtQotHkmPamJulreAW/ekw/J2j6oF8cE2y+RoSfioFKjpKA59ZwwTfjVTMXaf9btKXOQKwVOTiX57F+wyLAFkQdxKx/mNVYXyg8h4La+G+2I5PS0V3gcuM+aioDQx9lSuaTWUc71OIroEeZgvj37a8iIdh7u/0xhqLZ1J5jHoUjlAQ0VrDScWFp7r0EULuUd1KHTJrX5CjQUMtTKaeNAeiabAF2K62P7A63/l1ciPFqQOMSi+s5v4OkB9d8/ovMR+Jf8gWDwA7VDLkA0foJLpQPWHvBxntNI6ydbDkn6oNnSsJEwvCFhO8AXj9bson944bC6Dmt+xT4AilgWtyL4EvkeD2s2qmeHEsP4C0vmHZ+F9Nq6Mr1zcrnr3nOzpUppWwpqLaqCxD/fwDdC+fH9vAlbj53oHgsrf9wLa4A4H4woc0iq0yqDE86PrUwT0C6vUyyu98SqFNLuOKmvxeNrroch6JBeq0VE5CySNIOy1sM6Sjme+T9KpfZU4GEDWnm1o+rhbQC9T1zwBJFDcQSPctUhDGs0PI/r5ZyR0Nwr7mY8xjkKx0d3yOx49dNFESd1pQ46Udh6nqpikzTTtljzK9yyjvs2pr2VMxLSfjWMA==
+        template:
+          metadata:
+            name: postgres-auth
+            namespace: postgres
