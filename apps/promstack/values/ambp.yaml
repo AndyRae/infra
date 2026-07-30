@@ -52,12 +52,6 @@ kube-prometheus-stack:
         metadata:
           name: grafana-auth
           namespace: monitoring
-          annotations:
-            # sealed-secrets' CRD schema is too loosely typed for server-side apply's
-            # strict field validation (rejects spec.template) — fall back to client-side
-            # apply for just this resource, even though the Application uses SSA overall
-            # (needed for the huge prometheus-operator CRDs, see CLAUDE.md Milestone 7 note).
-            argocd.argoproj.io/sync-options: ServerSideApply=false
         spec:
           encryptedData:
             admin-password: AgBJebrARV+u/8et5tz0CbmFuBUdo4ZHO3bxO4nGGGfJT5c/rEpvH/WVvGqsDIlyoW37iAUv6k6dh/3STm6PcgNg1mhui6R6d1Of4dE/q/RmWll/ojBpKkZ3QINo1uPAZY7A89qCKqj2zpjwsfqFZW8FEnEwuuJOPRRn+VXohCtzyMbH5xEUUdmwRk/bOom93nb4KMSYCfo5WA4ZJka6VBcNPKzSRByMAk8gZbbE6M8g4ie11iEN4KVgQOBs78RepsWSR/1oFJ9TvWT9Hzo9P3F3or+xkYW/1uUUQbZAOaIT4U587/XUtd+B6RCP0L+V1inCldDRfEadHKp07t0uPMA4liWU0QYMUi1PcrR33Dg6xY1FH34BlNr6YWANm6UdZYC+NBOWO00KyX0L32DARUvZy5z8ied8oBK/+80muSIOgXduvDiY0eiAJIGxNFzhdIGCbsX2kFDmGX6vNPANbV5zLcQlnAfvCTteNVs+XbDnkpr26ufAyHXD3+kWf61aEbgHaQPcla0k2vEDgeKL3QyC25dnkYe5x4DYLCvtrR3vx1RYGC7ho+Po7x8mhUPe2gy6q/t3em9Z1txlaLa1zhKp0OpMjf0rt4Awn2GvIbUgxUdVM14nZjbWSLQcmBRL87S4IDF4LOFOxKHG79nSitnZeW0X/v+6HVfsYDnghJixGmLicjFK4UC8lYgsJhlypwrBbx7AodY8iTVoGPc2o3Lx8CHOd9M/R+2nTflWK37FRg==
