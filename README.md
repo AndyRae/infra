@@ -34,6 +34,24 @@ helm install sealed-secrets sealed-secrets/sealed-secrets \
 kubectl --context <cluster-name> apply -f clusters/<cluster-name>/root-app.yaml
 ```
 
+## Day-to-day: stop/start a machine
+
+Pausing (e.g. overnight, or before closing the laptop) doesn't need a rebuild:
+
+```bash
+colima stop --profile fleet    # preserves the VM disk — etcd/k3s state and all PVC data survive
+colima start --profile fleet   # bare, no flags — resumes with the same config it was created with
+```
+
+Flags (`--cpu`, `--kubernetes-version`, etc.) are only needed on the very
+first `colima start` that creates the instance, not on later resumes. ArgoCD
+resumes polling and reconciles automatically; any `kubectl port-forward` you
+had running dies with the VM and needs restarting.
+
+**Don't use `colima delete` for this** — that wipes the VM and disk entirely
+(all app data gone, full rebuild required). `stop`/`start` is the pause/resume
+pair; `delete` is the "start over" one.
+
 ## Layout
 
 - `apps/<name>/` — what an app is and how to run it (Helm umbrella chart + per-cluster
